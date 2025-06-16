@@ -94,47 +94,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
-<script>
-    // Firebase config (replace with your project’s credentials)
-    const firebaseConfig = {
-        apiKey: "AIzaSyBFAGcYvkY-QwXqlWexAWsMQBPbNZyI9Bs",
-        authDomain: "crime-prediction-dfd7d.firebaseapp.com",
-        projectId: "crime-prediction-dfd7d",
-        storageBucket: "crime-prediction-dfd7d.firebasestorage.app",
-        messagingSenderId: "688744929668",
-        appId: "1:688744929668:web:531b42bb28af1adfefa5d1",
-        measurementId: "G-5ZJ4XNX9YD"
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    function signup() {
-        const username = document.getElementById("username").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirm_password").value;
-
-        if (!username || !email || !password || !confirmPassword) {
-            alert("Please fill all fields.");
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-        }
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-
-                alert("Signup successful!");
-                window.location.href = "/login";
-            })
-            .catch((error) => {
-                alert("Signup failed: " + error.message);
-            });
-    }
-</script>
+ <script src="{{ url_for('static', filename='env.js') }}"></script>
 
 <!-- JS Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
