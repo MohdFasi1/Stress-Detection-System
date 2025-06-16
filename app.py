@@ -1,7 +1,10 @@
 import numpy as np
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,Response
+import os
+from dotenv import load_dotenv
 import pickle
 
+load_dotenv() 
 app = Flask(__name__)
 
 stress = pickle.load(open('model/stress_model.pkl','rb'))
@@ -10,6 +13,25 @@ stress = pickle.load(open('model/stress_model.pkl','rb'))
 @app.route('/index')
 def index():
 	return render_template('index.html')
+
+
+@app.route("/env.js")
+def serve_env_js():
+    firebase_config = {
+        "apiKey": os.environ.get("API_KEY"),
+        "authDomain": os.environ.get("AUTH_DOMAIN"),
+        "projectId": os.environ.get("PROJECT_ID"),
+        "storageBucket": os.environ.get("STORAGE_BUCKET"),
+        "messagingSenderId": os.environ.get("MESSAGING_SENDER_ID"),
+        "appId": os.environ.get("APP_ID"),
+        "measurementId": os.environ.get("MEASUREMENT_ID")
+    }
+
+    js_code = f"""
+    const firebaseConfig = {firebase_config};
+    firebase.initializeApp(firebaseConfig);
+    """
+    return Response(js_code, mimetype="application/javascript")
  
 
 @app.route('/signup')
