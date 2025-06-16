@@ -18,13 +18,13 @@ def index():
 @app.route("/env.js")
 def serve_env_js():
     firebase_config = {
-        "apiKey": os.environ.get("API_KEY"),
-        "authDomain": os.environ.get("AUTH_DOMAIN"),
-        "projectId": os.environ.get("PROJECT_ID"),
-        "storageBucket": os.environ.get("STORAGE_BUCKET"),
-        "messagingSenderId": os.environ.get("MESSAGING_SENDER_ID"),
-        "appId": os.environ.get("APP_ID"),
-        "measurementId": os.environ.get("MEASUREMENT_ID")
+        "apiKey": os.environ.get("apiKey"),
+        "authDomain": os.environ.get("authDomain"),
+        "projectId": os.environ.get("projectId"),
+        "storageBucket": os.environ.get("storageBucket"),
+        "messagingSenderId": os.environ.get("messagingSenderId"),
+        "appId": os.environ.get("appId"),
+        "measurementId": os.environ.get("measurementId")
     }
 
     js_code = f"""
