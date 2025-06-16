@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Human Stress Detection Based on Sleeping Habits 
+        Using Machine Learning Algorithms</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/img/favicon.png">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/login.css" rel="stylesheet">
+    <link href="../static/css/responsive.css" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyBFAGcYvkY-QwXqlWexAWsMQBPbNZyI9Bs",
+          authDomain: "crime-prediction-dfd7d.firebaseapp.com",
+          projectId: "crime-prediction-dfd7d",
+          storageBucket: "crime-prediction-dfd7d.firebasestorage.app",
+          messagingSenderId: "688744929668",
+          appId: "1:688744929668:web:531b42bb28af1adfefa5d1",
+          measurementId: "G-5ZJ4XNX9YD"
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</head>
+<body>
+
+    <header id="masthead" class="site-header site-header-white">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                   
+                    <a class="site-title"><span>Human Stress </span>Detection</a>
+
+                </div>
+                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="/">Home</a></li>
+                        
+                        <li><a href="/signup">Sign Up</a></li>
+                        
+
+                    </ul>
+
+                </div>
+
+            </div>   
+        </nav>
+    </header>
+
+    <div id="hero" class="hero overlay subpage-hero portfolio-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Login</h1>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Human Stress</a></li>
+                  
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <main id="main" class="site-main">
+
+        <section class="site-section section-ui-elements">
+            <div class="container">
+
+                <div class="typography">
+                         <section class="page-section portfolio" id="portfolio">
+                             <div class="row">
+                               <div class="col-md-10 col-lg-6" style="margin-left:400px">
+                                  <center><h2 class="mb-0 bread"> </h2></center>
+                                <div class="control-group">
+                                         <label class="control-label"   for="uname"><b>Username</b></label>
+                                         <div class="controls">
+                                           <input type="text" id="uname" name="uname" placeholder="" class="form-control">
+                                          
+                                         </div>
+                                       </div>
+                                       <div class="control-group">
+                                         <br>
+                                         <label class="control-label"  for="pwd"><b>Password</b></label>
+                                         <div class="controls">
+                                           <input type="password" id="pwd" name="pwd" placeholder="" class="form-control">
+                                         
+                                         </div>
+                                       </div>
+                                        <div class="col-md-6 col-lg-4" style="margin-left:-150px">
+                                       <div class="control-group">
+                                         <br>
+                                         <div class="controls">
+                                          
+                                           <input type="button" class="btn btn-success" value="Login" style="margin-left: 250px" onclick="login()">
+                                         
+                                         </div>
+                                       </div>
+                                        </div>
+                         </div>
+                         </div>
+                         </section>
+                       
+
+
+
+
+                        </div>
+                    </div>
+               
+        </section>
+
+    </main>
+
+
+
+    <script>
+        function login() {
+            const email = document.getElementById("uname").value;
+            const password = document.getElementById("pwd").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    alert("Login successful!");
+                    localStorage.setItem("isLoggedIn", true);
+                    window.location.href = "/";
+                })
+                .catch((error) => {
+                    alert("Login failed: " + error.message);
+                });
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/jquery.slicknav.min.js"></script>
+    <script src="../static/js/jquery.countTo.min.js"></script>
+    <script src="../static/js/jquery.shuffle.min.js"></script>
+    <script src="../static/js/script.js"></script>
+  
+</body>
+</html>

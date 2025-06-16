@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Model Accuracy Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f9;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 60%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      padding: 12px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    caption {
+      caption-side: top;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Model Accuracy Comparison</h1>
+
+  <table>
+    <caption>Accuracy of ML Models</caption>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Precision</th>
+        <th>Recall</th>
+        <th>f1-score</th>
+        <th>Training Accuracy</th>
+        <th>Test Accuracy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Random Forest</td>
+
+        <td>0.96</td>
+        <td>0.95</td>
+        <td>0.95</td>
+        <td>100%</td>
+        <td>95.34%</td>
+      </tr>
+      <tr>
+        <td>Decision Tree</td>
+        <td>0.95</td>
+        <td>0.95</td>
+        <td>0.95</td>
+        <td>100%</td>
+        <td>94.73%</td>
+      </tr>
+      <tr>
+        <td>Naïve Bayes</td>
+        <td>0.93</td>
+        <td>0.92</td>
+        <td>0.92</td>
+        <td>92.71%</td>
+        <td>92.33%</td>
+      </tr>
+      <tr>
+        <td>Logistic Regression</td>
+        <td>0.92</td>
+        <td>0.92</td>
+        <td>0.92</td>
+        <td>93.05%</td>
+        <td>92.05%</td>
+      </tr>
+      <tr>
+        <td>Support Vector Machine</td>
+        <td>0.92</td>
+        <td>0.92</td>
+        <td>0.92</td>
+        <td>93.13%</td>
+        <td>91.82%</td>
+      </tr>
+      <tr>
+        <td>K-Nearest Neighbors</td>
+        <td>0.89</td>
+        <td>0.88</td>
+        <td>0.88</td>
+        <td>93.65%</td>
+        <td>88.33%</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</body>
+</html>
